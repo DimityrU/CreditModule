@@ -1,0 +1,49 @@
+﻿За Целите на задачата ще използвам база с 3 таблици:	
+
+1. Таблица "Credit" със следните полета:
+	- creditId - уникален идентификатор на записа
+	- CreditNumber - номер на кредита (уникално)
+	- ClientName - име на клиента
+	- RequestDate - дата на заявката
+	- PaymentTypeId - тип на плащане (id от таблицата с типове плащания)
+	- RequestedSum - сума на кредита
+
+2. Таблица "PaymenТype" със следните полета:
+	- PaymentTypeId - уникален идентификатор на записа
+	- Name - име на типа плащане (уникално)
+
+3. Таблица "Invoice" със следните полета:
+	- InvoiceId - уникален идентификатор на записа
+	- CreditId - идентификатор на кредита (id от таблицата с кредити)
+	- InvoiceNumber - номер на фактурата (уникално)
+	- InvoiceTotal - сума на плащане
+
+	Скриптове на таблиците (SQLlite):
+
+	CREATE TABLE "Credit" (
+		"CreditId"	INTEGER NOT NULL UNIQUE,
+		"CreditNumber"	INTEGER UNIQUE,
+		"ClientName"	TEXT,
+		"RequestDate"	TEXT,
+		"PaymentTypeId"	INTEGER,
+		"RequestedSum"	INTEGER,
+		PRIMARY KEY("CreditId" AUTOINCREMENT),
+		FOREIGN KEY("PaymentTypeId") REFERENCES "PaymentType"("PaymentTypeId")
+	);
+
+	CREATE TABLE "Invoice" (
+		"InvoiceId"	INTEGER NOT NULL UNIQUE,
+		"CreditId"	INTEGER NOT NULL,
+		"InvoiceNumber"	INTEGER NOT NULL UNIQUE,
+		"InvoiceTotal"	INTEGER,
+		PRIMARY KEY("InvoiceId" AUTOINCREMENT),
+		FOREIGN KEY("CreditId") REFERENCES "Credit"("CreditId")
+	);
+
+	CREATE TABLE "PaymentType" (
+		"PaymentTypeId"	INTEGER NOT NULL UNIQUE,
+		"Name"	TEXT NOT NULL UNIQUE,
+		PRIMARY KEY("PaymentTypeId" AUTOINCREMENT)
+	);
+
+	Файла на базата: CreditModule\DataAccess\DataAccess.CreditModule.Repository\creditmodule.db
