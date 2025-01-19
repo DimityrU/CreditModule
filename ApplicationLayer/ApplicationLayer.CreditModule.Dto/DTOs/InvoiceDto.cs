@@ -1,7 +1,7 @@
 ﻿namespace ApplicationLayer.CreditModule.Dto.DTOs;
 
 public record InvoiceDto(
-    string InvoiceId,
+    int InvoiceId,
     int InvoiceNumber,
-    int InvoiceTotal
+    decimal InvoiceTotal
 );

@@ -25,8 +25,11 @@ builder.Services.AddScoped<ICreditService, CreditsService>();
 var config = new MapperConfiguration(c => {
     c.AddProfile<InvoiceProfile>();
     c.AddProfile<CreditProfile>();
-    c.AddProfile<CreditDTOProfile>();
     c.AddProfile<PaymentProfile>();
+    c.AddProfile<CreditDTOProfile>();
+    c.AddProfile<InvoiceDTOProfile>();
+    c.AddProfile<StatusDTOProfile>();
+
 });
 
 builder.Services.AddSingleton<IMapper>(_ => config.CreateMapper());

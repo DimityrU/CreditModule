@@ -61,7 +61,6 @@ public class CreditsService(ICreditRepository creditRepository,IMapper mapper) :
         return response;
     }
 
-
     private static decimal CalculatePercentage(IEnumerable<Payment> payments, decimal value)
     {
         var total = payments.Sum(payment => payment.Sum);

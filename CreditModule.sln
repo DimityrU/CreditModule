@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditModule", "CreditModule\CreditModule.csproj", "{0958371F-99DA-49D1-B999-1CFD103DDCCA}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.CreditModule.Repository.Shared", "DataAccess\DataAccess.CreditModule.Repository.Shared\DataAccess.CreditModule.Repository.Shared.csproj", "{92E5978B-98DB-4056-9152-EA6B202AEF52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditModule.DomainModels", "CreditModule.DomainModels\CreditModule.DomainModels.csproj", "{B335E65F-AD3D-4870-8152-DBAC225789A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditModule.Tests", "CreditModule.Tests\CreditModule.Tests.csproj", "{DCE6EB50-E079-4D5F-B34A-35A75BAA2436}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{B335E65F-AD3D-4870-8152-DBAC225789A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B335E65F-AD3D-4870-8152-DBAC225789A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B335E65F-AD3D-4870-8152-DBAC225789A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCE6EB50-E079-4D5F-B34A-35A75BAA2436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCE6EB50-E079-4D5F-B34A-35A75BAA2436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCE6EB50-E079-4D5F-B34A-35A75BAA2436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCE6EB50-E079-4D5F-B34A-35A75BAA2436}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
