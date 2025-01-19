@@ -7,7 +7,10 @@ using DataAccess.CreditModule.Repository;
 using DataAccess.CreditModule.Repository.Entities;
 using DataAccess.CreditModule.Repository.MapperProfiles;
 using DataAccess.CreditModule.Repository.Shared;
-using Microsoft.OpenApi.Models;
+using Microsoft.Extensions.Options;
+using System.Reflection;
+using NSwag;
+using OpenApiInfo = Microsoft.OpenApi.Models.OpenApiInfo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,9 +36,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "CreditModuleAPI", Version = "v1" });
-
     c.SchemaFilter<ExcludePaymentTypes>();
+
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 
 });
 

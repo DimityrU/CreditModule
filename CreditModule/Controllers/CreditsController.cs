@@ -28,9 +28,11 @@ public class CreditsController(ICreditService creditService) : ControllerBase
     ///     **Example:**
     ///     <remarks>
     ///         1 - Paid,
-    ///         2 - Awaiting Payment,
+    ///         2 - Awaiting Payment
+    /// 
     ///     </remarks>
     /// </param>
+    /// 
     /// <response code="200">Returned Status successfully</response>
     /// <response code="400">Invalid payment type</response>
     [ProducesResponseType(StatusCodes.Status200OK)]
