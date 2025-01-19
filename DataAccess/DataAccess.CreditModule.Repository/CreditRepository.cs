@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using CreditModule.DomainModels;
 using CreditModule.DomainModels.Enums;
 using Dapper;
 using DataAccess.CreditModule.Repository.Entities;

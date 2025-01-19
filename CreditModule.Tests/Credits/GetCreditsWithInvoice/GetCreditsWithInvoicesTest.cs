@@ -25,9 +25,7 @@ public partial class GetCreditsWithInvoicesTest(MockFixture fixture)
         var response = await CreditService.GetCreditsWithInvoices();
 
         Assert.NotNull(response);
-        Assert.False(response.HasError); 
-        Assert.Null(response.ErrorMessage);
-        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Equal(expectedResponse, response);
 
         var expectedJson = JsonConvert.SerializeObject(expectedResponse.Credits);
         var actualJson = JsonConvert.SerializeObject(response.Credits);
